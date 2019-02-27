@@ -1,0 +1,93 @@
+<form (ngSubmit)="subscribe()" #subscriptionForm="ngForm">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Love veg, recipes & news? Subscriber to our Newletter!</h3>
+    </div>
+    <div class="panel-body">
+      <div class="form-group" [class.has-error]="name.invalid && name.touched" [class.has-success]="name.valid">
+        <label for="name" class="control-label">Name</label>
+        <input id="name" type="text" class="form-control" [(ngModel)]="subscription.name" name="name" #name="ngModel" required>
+        <span class="help-block" *ngIf="name.invalid && name.touched">Name is required!</span>
+      </div>
+
+        <div class="form-group" [class.has-error]="contactPreference.touched && contactPreference.invalid">
+            <label class="control-label">Contact Preference</label>
+            <div class="form-control">
+              <label class="radio-inline">
+                <input type="radio" required #contactPreference="ngModel" name="contactPreference" value="Email" [(ngModel)]="subscription.contactPreference"> Email
+              </label>
+              <label class="radio-inline">
+                <input type="radio" required #contactPreference="ngModel" name="contactPreference" value="Phone" [(ngModel)]="subscription.contactPreference"> Phone
+              </label>
+            </div>
+            <span class="help-block" *ngIf="contactPreference.touched && contactPreference.invalid">
+              Contact Preference is required
+            </span>
+          </div>
+
+      <div class="form-group" [class.has-error]="email.invalid">
+          <label for="email" class="control-label">Email</label>
+          <input id="email" [required]="contactPreference.value=='Email'" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+            name="email" #email="ngModel" [(ngModel)]="subscription.email" type="text" class="form-control">
+          <span class="help-block" *ngIf="email.errors?.required">
+            Email is required
+          </span>
+          <span class="help-block" *ngIf="email.errors?.pattern">
+            Email is invalid
+          </span>
+        </div>
+
+      <div class="form-group" [class.has-error]="phoneNumber.invalid">
+          <label for="phoneNumber" class="control-label">Phone Number</label>
+          <input id="phoneNumber" [required]="contactPreference.value=='Phone'" name="phoneNumber" #phoneNumber="ngModel" [(ngModel)]="subscription.phoneNumber"
+            type="text" class="form-control">
+          <span class="help-block" *ngIf="phoneNumber.errors?.required">
+            Phone Number is required
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label>Food Preference</label>
+          <div class="form-control">
+            <label class="radio-inline">
+              <input type="radio" value="vegetarian" name="foodPreference" [(ngModel)]="subscription.foodPreference">
+              Vegetarian
+            </label>
+            <label class="radio-inline">
+              <input type="radio" value="vegan" name="foodPreference" [(ngModel)]="subscription.foodPreference">
+              Vegan
+            </label>
+            <label class="radio-inline">
+              <input type="radio" value="none" name="foodPreference" [(ngModel)]="subscription.foodPreference">
+              None
+            </label>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="areasOfInterest">
+            Areas of Interest
+          </label>
+          <ng-multiselect-dropdown [(ngModel)]="subscription.areasOfInterest" name="areasOfInterest" #areasOfInterest = "ngModel"
+          [placeholder]="'Select your Interest'"
+          [data]="areasOfInterestList"
+          [(ngModel)]="selectedItems"
+          [settings]="dropdownSettings"
+          (onSelect)="onItemSelect($event)"
+          (onSelectAll)="onSelectAll($event)"
+        >
+        Interest
+        </ng-multiselect-dropdown>
+        </div>
+      </div>
+    </div>
+    <div class="panel-footer">
+      <button type="submit" class="btn btn-primary" [disabled]="subscriptionForm.invalid">Subscribe!</button>
+    </div>
+</form>
+
+Angular form reference Model : {{subscriptionForm.value | json}}
+<br/>
+<br/>
+Subscription Model : {{subscription | json}}

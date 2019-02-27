@@ -1,0 +1,22 @@
+<div class="panel panel-primary" *ngFor="let subscription of subscriptions">
+<div class="panel-heading">
+  <h3 class="panel-title">{{subscription.name}}</h3>
+</div>
+<div class="panel-body">
+  <div class="col-xs-10">
+    <div class="row">
+      <div class="col-xs-6">Food Preference</div>
+      <div class="col-xs-6">: {{subscription.foodPreference}}</div>
+      <div class="col-xs-6">Communication Preference</div>
+      <div class="col-xs-6">: {{subscription.contactPreference}}</div>
+      <div class="col-xs-6">Email</div>
+      <div class="col-xs-6">: {{subscription.email}}</div>
+      <div class="col-xs-6">Phone number</div>
+      <div class="col-xs-6">: {{subscription.phoneNumber}}</div>
+      <div class="col-xs-6">Areas of Interest</div>
+      <div style="font-weight:bold" class="col-xs-6">: {{subscription.interests}}</div>
+    </div>
+  </div>
+</div>
+
+</div>

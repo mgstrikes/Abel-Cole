@@ -1,0 +1,41 @@
+{
+  "subscriptions": [
+    {
+      "id": 1,
+      "name": "jj",
+      "contactPreference": "Email",
+      "email": "mark@test.com",
+      "foodPreference": "Vegetarian",
+      "areasOfInterest": [{ "item_id": 2, "item_text": "Recipes" }, { "item_id": 3, "item_text": "Fruit"} ],
+      "interests":""
+    },
+    {
+      "id": 2,
+      "name": "Mary",
+      "contactPreference": "Email",
+      "email": "mary@ac.com",
+      "foodPreference": "Vegen",
+      "areasOfInterest": [{ "item_id": 1, "item_text": "Seasonal Food" }, { "item_id": 3, "item_text": "Fruit"} ],
+      "interests":""
+    },
+    {
+      "id": 3,
+      "name": "John",
+      "contactPreference": "Email",
+      "email": "john@ac.com",
+      "foodPreference": "None",
+      "areasOfInterest": [{ "item_id": 1, "item_text": "Seasonal Food" }, { "item_id": 3, "item_text": "Fruit"} ],
+      "interests":""
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
