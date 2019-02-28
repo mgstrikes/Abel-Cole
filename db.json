@@ -2,12 +2,21 @@
   "subscriptions": [
     {
       "id": 1,
-      "name": "jj",
+      "name": "Mark",
       "contactPreference": "Email",
       "email": "mark@test.com",
       "foodPreference": "Vegetarian",
-      "areasOfInterest": [{ "item_id": 2, "item_text": "Recipes" }, { "item_id": 3, "item_text": "Fruit"} ],
-      "interests":""
+      "areasOfInterest": [
+        {
+          "item_id": 2,
+          "item_text": "Recipes"
+        },
+        {
+          "item_id": 3,
+          "item_text": "Fruit"
+        }
+      ],
+      "interests": ""
     },
     {
       "id": 2,
@@ -15,8 +24,17 @@
       "contactPreference": "Email",
       "email": "mary@ac.com",
       "foodPreference": "Vegen",
-      "areasOfInterest": [{ "item_id": 1, "item_text": "Seasonal Food" }, { "item_id": 3, "item_text": "Fruit"} ],
-      "interests":""
+      "areasOfInterest": [
+        {
+          "item_id": 1,
+          "item_text": "Seasonal Food"
+        },
+        {
+          "item_id": 3,
+          "item_text": "Fruit"
+        }
+      ],
+      "interests": ""
     },
     {
       "id": 3,
@@ -24,8 +42,69 @@
       "contactPreference": "Email",
       "email": "john@ac.com",
       "foodPreference": "None",
-      "areasOfInterest": [{ "item_id": 1, "item_text": "Seasonal Food" }, { "item_id": 3, "item_text": "Fruit"} ],
-      "interests":""
+      "areasOfInterest": [
+        {
+          "item_id": 1,
+          "item_text": "Seasonal Food"
+        },
+        {
+          "item_id": 3,
+          "item_text": "Fruit"
+        }
+      ],
+      "interests": ""
+    },
+    {
+      "id": 5,
+      "name": "Mask",
+      "contactPreference": "Email",
+      "email": "john1@ac.com",
+      "foodPreference": "None",
+      "areasOfInterest": [
+        {
+          "item_id": 1,
+          "item_text": "Seasonal Food"
+        },
+        {
+          "item_id": 3,
+          "item_text": "Fruit"
+        }
+      ],
+      "interests": "xyz"
+    },
+    {
+      "id": 6,
+      "name": "Manu George",
+      "email": "manugeorgeks@gmail.com",
+      "phoneNumber": "9741508426",
+      "contactPreference": "Email",
+      "foodPreference": "vegetarian",
+      "areasOfInterest": [
+        {
+          "item_id": 1,
+          "item_text": "Seasonal Food"
+        },
+        {
+          "item_id": 2,
+          "item_text": "Recipes"
+        },
+        {
+          "item_id": 3,
+          "item_text": "Fruit"
+        },
+        {
+          "item_id": 4,
+          "item_text": "Veg"
+        },
+        {
+          "item_id": 5,
+          "item_text": "Drinks"
+        },
+        {
+          "item_id": 6,
+          "item_text": "Household"
+        }
+      ]
     }
   ],
   "comments": [

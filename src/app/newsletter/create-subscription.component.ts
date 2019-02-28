@@ -52,8 +52,8 @@ export class CreateSubscriptionComponent implements OnInit {
     console.log(items);
   }
 
-  subscribe(): void {
+  subscribe(subscriptionForm: NgForm): void {
     this._subscriptionService.saveSubscription(this.subscription);
-    this._router.navigate(['list']);
+    // this._router.navigate(['list']);
   }
 }

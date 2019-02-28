@@ -10,8 +10,15 @@ export class ListSubscriptionsComponent implements OnInit {
   subscriptions: NewsletterSubscription[];
   constructor(private _subscriptionService: SubscriptionService) { }
 
-  ngOnInit() {
-    this.subscriptions = this._subscriptionService.getSubscriptions();
+  async ngOnInit() {
+    this.subscriptions = await this._subscriptionService.getSubscriptions();
+        this.subscriptions.forEach(element => {
+            let interests = '';
+            element.areasOfInterest.forEach(x => {
+                interests += x.item_text + '\t\t';
+            });
+            element.interests = interests;
+        });
   }
 
 }

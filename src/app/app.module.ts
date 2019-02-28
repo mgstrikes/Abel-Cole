@@ -13,9 +13,9 @@ import {SubscriptionService} from './newsletter/subscription.service';
 
 const appRoutes: Routes = [
   {path: 'list', component: ListSubscriptionsComponent},
-  {path: 'create', component: CreateSubscriptionComponent,canDeactivate:[CreateSubscriptionCanDeactivateGuardService]},
+  {path: 'create', component: CreateSubscriptionComponent},
   {path: '', redirectTo: '/list', pathMatch: 'full'}
-
+// ,canDeactivate:[CreateSubscriptionCanDeactivateGuardService]
 ];
 
 @NgModule({
@@ -31,7 +31,7 @@ const appRoutes: Routes = [
     NgMultiSelectDropDownModule.forRoot(),
     HttpClientModule
   ],
-  providers: [SubscriptionService,CreateSubscriptionCanDeactivateGuardService],
+  providers: [SubscriptionService, CreateSubscriptionCanDeactivateGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
