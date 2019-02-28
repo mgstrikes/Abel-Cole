@@ -15,17 +15,10 @@ export class CreateSubscriptionComponent implements OnInit {
   areasOfInterestList = [];
   dropdownSettings = {};
   areasOfInterest = 1;
-  subscription: NewsletterSubscription = {
-    id: null,
-    name: null,
-    email: '',
-    phoneNumber: null,
-    contactPreference: null,
-    foodPreference: null,
-    areasOfInterest: null
-  };
+  subscription: NewsletterSubscription;
 
   ngOnInit() {
+    this.resetform();
     this.areasOfInterestList = [
       { item_id: 1, item_text: 'Seasonal Food' },
       { item_id: 2, item_text: 'Recipes' },
@@ -54,6 +47,21 @@ export class CreateSubscriptionComponent implements OnInit {
 
   subscribe(subscriptionForm: NgForm): void {
     this._subscriptionService.saveSubscription(this.subscription);
+    // this.resetform();
+    this.createSubscriptionForm.resetForm();
+    alert('Subscription created successfully!!');
     // this._router.navigate(['list']);
+  }
+
+  resetform(): void {
+    this.subscription = {
+      id: null,
+      name: null,
+      email: '',
+      phoneNumber: null,
+      contactPreference: null,
+      foodPreference: null,
+      areasOfInterest: null
+    };
   }
 }
